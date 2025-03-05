@@ -9,7 +9,6 @@ public class UserInfo {
         if(name==null | name.isEmpty()){
             throw new IllegalArgumentException();
         }
-
         this.name = name;
         this.profileImageUrl = profileImageUrl;
     }
