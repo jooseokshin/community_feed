@@ -54,6 +54,10 @@ public class User {
         return id;
     }
 
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
     public int getFollowerCount() {
         return followerCount.getCount();
     }
