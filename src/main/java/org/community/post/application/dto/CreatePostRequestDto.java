@@ -1,4 +1,4 @@
-package org.community.post.application.interfaces.dto;
+package org.community.post.application.dto;
 
 import org.community.post.domain.content.PostPublicationState;
 

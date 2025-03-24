@@ -2,6 +2,7 @@ package org.community.post.domain.comment;
 
 import org.community.common.domain.PositiveIntegerCounter;
 import org.community.post.Post;
+import org.community.post.domain.content.CommentContent;
 import org.community.post.domain.content.Content;
 import org.community.user.domain.User;
 
@@ -13,7 +14,11 @@ public class Comment {
     private final Content content;
     private final PositiveIntegerCounter likeCount;
 
-    public Comment(Content content, Long id, Post post, User author) {
+    public static Comment createComment(Post post, User author, String content) {
+        return new Comment(null, post, author, new CommentContent(content));
+    }
+
+    public Comment(Long id, Post post, User author, Content content) {
         if(content == null || post == null || author == null){
             throw new IllegalArgumentException();
         }
