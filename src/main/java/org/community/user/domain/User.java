@@ -1,15 +1,25 @@
 package org.community.user.domain;
 
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.community.common.domain.PositiveIntegerCounter;
 
 import java.util.Objects;
 
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class User {
 
-    private final Long id;
-    private final UserInfo userInfo;
-    private final PositiveIntegerCounter followingCount;
-    private final PositiveIntegerCounter followerCount;
+    @Id
+    private Long id;
+    private UserInfo userInfo;
+    private PositiveIntegerCounter followingCount;
+    private PositiveIntegerCounter followerCount;
 
     public User(Long id, UserInfo userInfo) {
         if(userInfo == null){
@@ -50,19 +60,19 @@ public class User {
         return Objects.hashCode(id);
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public UserInfo getUserInfo() {
-        return userInfo;
-    }
-
-    public int getFollowerCount() {
+    public int followerCount() {
         return followerCount.getCount();
     }
 
-    public int getFollowingCount() {
+    public int followingCount() {
         return followingCount.getCount();
+    }
+
+    public String getProfileImage() {
+        return userInfo.getProfileImageUrl();
+    }
+
+    public String getName() {
+        return userInfo.getName();
     }
 }
