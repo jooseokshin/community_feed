@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.community.user.domain.UserTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-04-15T14:31:55" hostname="appleui-MacBookPro.local" time="0.015">
+  <properties/>
+  <testcase name="givenTwoUser_whenEqual_thenReturnFalse()" classname="org.community.user.domain.UserTest" time="0.004"/>
+  <testcase name="givenTwoUser_whenUser1FollowUser2_thenIncreaseUserCount()" classname="org.community.user.domain.UserTest" time="0.002"/>
+  <testcase name="givenSameIdUser_whenEqual_thenReturnTrue()" classname="org.community.user.domain.UserTest" time="0.002"/>
+  <testcase name="givenTwoUser_whenHashCode_thenReturnFalse()" classname="org.community.user.domain.UserTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

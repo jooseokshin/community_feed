@@ -1,11 +1,17 @@
 package org.community.post.domain.comment;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import org.community.common.domain.PositiveIntegerCounter;
 import org.community.post.Post;
 import org.community.post.domain.content.CommentContent;
 import org.community.post.domain.content.Content;
 import org.community.user.domain.User;
 
+@Builder
+@AllArgsConstructor
+@Getter
 public class Comment {
 
     private final Long id;
@@ -28,6 +34,14 @@ public class Comment {
         this.post = post;
         this.author = author;
         this.likeCount = new PositiveIntegerCounter();
+    }
+
+    public String getContent() {
+        return content.getContentText();
+    }
+
+    public Integer getLikeCount() {
+        return likeCount.getCount();
     }
 
     public void like(User user){
