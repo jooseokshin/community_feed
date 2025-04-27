@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community_feed
+    username: root
+    password:
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update #Entity에 따라 자동으로 테이블을 변경해주는 기능, 실무에서는 사용하지 않음
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.community.common.domain.PositiveIntegerCounter;
+import org.community.common.repository.entity.TimeBaseEntity;
 import org.community.user.domain.User;
 import org.community.user.domain.UserInfo;
 
@@ -13,7 +14,7 @@ import org.community.user.domain.UserInfo;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-public class UserEntity {
+public class UserEntity extends TimeBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

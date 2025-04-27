@@ -1,0 +1,25 @@
+package org.community.user.repository.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.community.common.repository.entity.TimeBaseEntity;
+
+@Entity
+@Table(name = "community_user_relation")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@IdClass(UserRelationIdEntity.class)
+public class UserRepositoryEntity extends TimeBaseEntity {
+
+    @Id
+    private Long followingUserId;
+
+    @Id
+    private Long followerUserId;
+}
