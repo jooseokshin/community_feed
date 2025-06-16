@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LikeIdEntity {
-    private Long targerId;
+    private Long targetId;
     private Long userId;
     private String targetType;
 }

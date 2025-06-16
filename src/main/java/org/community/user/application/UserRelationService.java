@@ -3,7 +3,9 @@ package org.community.user.application;
 import org.community.user.application.dto.FollowUserRequestDto;
 import org.community.user.application.interfaces.UserRelationRepository;
 import org.community.user.domain.User;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserRelationService {
 
     private final UserService userService;
@@ -30,7 +32,7 @@ public class UserRelationService {
         User user = userService.getUser(dto.userId());
         User targetUser = userService.getUser(dto.targetUserID());
 
-        if(userRelationRepository.isAlreadyFollow(user, targetUser)){
+        if(!userRelationRepository.isAlreadyFollow(user, targetUser)){
             throw new IllegalArgumentException();
         }
 

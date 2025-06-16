@@ -15,7 +15,7 @@ import org.community.common.repository.entity.TimeBaseEntity;
 @AllArgsConstructor
 @Getter
 @IdClass(UserRelationIdEntity.class)
-public class UserRepositoryEntity extends TimeBaseEntity {
+public class UserRelationEntity extends TimeBaseEntity {
 
     @Id
     private Long followingUserId;

@@ -1,5 +1,6 @@
 package org.community.user.domain;
 
+import net.bytebuddy.implementation.bind.MethodDelegationBinder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -54,9 +55,9 @@ public class UserTest {
         user1.follow(user2);
 
         // then
-        assertEquals(1, user1.getFollowingCount());
-        assertEquals(0, user1.getFollowerCount());
-        assertEquals(1, user2.getFollowerCount());
-        assertEquals(0, user2.getFollowingCount());
+        assertEquals(1, user1.getFollowingCount().getCount());
+        assertEquals(0, user1.getFollowerCount().getCount());
+        assertEquals(1, user2.getFollowerCount().getCount());
+        assertEquals(0, user2.getFollowingCount().getCount());
     }
 }

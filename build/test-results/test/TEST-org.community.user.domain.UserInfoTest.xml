@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.community.user.domain.UserInfoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-04-15T14:31:55" hostname="appleui-MacBookPro.local" time="0.018">
-  <properties/>
-  <testcase name="givenBlankAndProfileImage_whenCreated_thenThrow()" classname="org.community.user.domain.UserInfoTest" time="0.015"/>
-  <testcase name="givenNameAndProfileImage_whenCreated_thenThrowNothing()" classname="org.community.user.domain.UserInfoTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

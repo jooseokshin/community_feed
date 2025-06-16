@@ -13,14 +13,14 @@ import org.community.user.domain.User;
 public class CommentService {
 
     private final UserService userService;
-    private final PostSerive postSerive;
+    private final PostService postService;
     private final CommentRepository commentRepository;
     private final LikeRepository likeRepository;
 
-    public CommentService(CommentRepository commentRepository, UserService userService, PostSerive postSerive, LikeRepository likeRepository) {
+    public CommentService(CommentRepository commentRepository, UserService userService, PostService postService, LikeRepository likeRepository) {
         this.commentRepository = commentRepository;
         this.userService = userService;
-        this.postSerive = postSerive;
+        this.postService = postService;
         this.likeRepository = likeRepository;
     }
 
@@ -29,7 +29,7 @@ public class CommentService {
     }
 
     public Comment createCommnet(CreateCommentRequsetDto dto) {
-        Post post = postSerive.getPost(dto.postId());
+        Post post = postService.getPost(dto.postId());
         User user = userService.getUser(dto.userId());
 
         Comment comment = Comment.createComment(post, user, dto.comment());

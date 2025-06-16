@@ -8,12 +8,14 @@ import org.community.common.domain.PositiveIntegerCounter;
 import org.community.common.repository.entity.TimeBaseEntity;
 import org.community.user.domain.User;
 import org.community.user.domain.UserInfo;
+import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
 @Table(name = "community_user")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@DynamicUpdate
 public class UserEntity extends TimeBaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

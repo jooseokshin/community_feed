@@ -8,21 +8,24 @@ import org.community.post.application.dto.LikeRequestDto;
 import org.community.post.application.dto.UpdatePostRequestDto;
 import org.community.user.application.UserService;
 import org.community.user.domain.User;
+import org.springframework.stereotype.Service;
 
-public class PostSerive {
+
+@Service
+public class PostService {
 
     private final UserService userService;
     private final PostRepository postRepository;
     private final LikeRepository likeRepository;
 
-    public PostSerive(LikeRepository likeRepository, PostRepository postRepository, UserService userService) {
+    public PostService(LikeRepository likeRepository, PostRepository postRepository, UserService userService) {
         this.likeRepository = likeRepository;
         this.postRepository = postRepository;
         this.userService = userService;
     }
 
     public Post getPost(Long id) {
-        return postRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Post not found"));
+        return postRepository.findById(id);
     }
 
     public Post createPost(CreatePostRequestDto dto) {
