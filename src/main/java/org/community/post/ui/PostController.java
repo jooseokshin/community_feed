@@ -10,6 +10,7 @@ import org.community.post.application.dto.UpdatePostRequestDto;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/post")
 @RequiredArgsConstructor
 public class PostController {
 
@@ -21,7 +22,7 @@ public class PostController {
         return Response.ok(post.getId());
     }
 
-    @PatchMapping("{postId}")
+    @PatchMapping("/{postId}")
     public Response<Long> updatePost(@PathVariable(name = "postId") Long postId, UpdatePostRequestDto dto) {
         Post post = postService.updatePost(postId, dto);
         return Response.ok(post.getId());

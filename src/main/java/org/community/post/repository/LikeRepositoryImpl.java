@@ -1,10 +1,14 @@
 package org.community.post.repository;
 
+import lombok.RequiredArgsConstructor;
 import org.community.post.Post;
 import org.community.post.application.interfaces.LikeRepository;
 import org.community.post.domain.comment.Comment;
 import org.community.user.domain.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
+@RequiredArgsConstructor
 public class LikeRepositoryImpl implements LikeRepository {
     @Override
     public boolean checkLike(Post post, User user) {

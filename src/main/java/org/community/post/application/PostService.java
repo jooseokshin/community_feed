@@ -29,8 +29,8 @@ public class PostService {
     }
 
     public Post createPost(CreatePostRequestDto dto) {
-        User author = userService.getUser(dto.id());
-        Post post = Post.createPost(dto.id(), author, dto.content(), dto.state());
+        User author = userService.getUser(dto.postId());
+        Post post = Post.createPost(dto.postId(), author, dto.content(), dto.state());
         return postRepository.save(post);
     }
 
