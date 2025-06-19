@@ -3,6 +3,8 @@ package org.community.post.repository;
 import lombok.RequiredArgsConstructor;
 import org.community.post.application.interfaces.CommentRepository;
 import org.community.post.domain.comment.Comment;
+import org.community.post.repository.entity.comment.CommentEntity;
+import org.community.post.repository.jpa.JpaCommentRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -11,13 +13,22 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class CommentRepositoryImpl implements CommentRepository {
 
+    private final JpaCommentRepository jpaCommentRepository;
+
     @Override
     public Comment save(Comment comment) {
-        return null;
+        CommentEntity commentEntity = new CommentEntity(comment);
+//        if(comment.getId() == null) {
+//            jpaCommentRepository.updateCommentEntity(commentEntity);
+//        }
+
+        commentEntity = jpaCommentRepository.save(commentEntity);
+        return commentEntity.toComment();
     }
 
     @Override
-    public Optional<Comment> findById(Long id) {
-        return Optional.empty();
+    public Comment findById(Long id) {
+        CommentEntity commentEntity = jpaCommentRepository.findById(id).orElseThrow();
+        return commentEntity.toComment();
     }
 }

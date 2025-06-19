@@ -63,7 +63,15 @@ public class Post {
         likeCount.decrease();
     }
 
-    public void updatePost(User user, String updateContent, PostPublicationState state) {
+    public void updateContent(User user, String updateContent, PostPublicationState state) {
+        if (!author.equals(user)) {
+            throw new IllegalArgumentException("only author can update content");
+        }
+
+        if (state == null) {
+            state = PostPublicationState.PUBLIC;
+        }
+
         this.content.updateContent(updateContent);
         this.state = state;
     }

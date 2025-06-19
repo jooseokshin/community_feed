@@ -23,7 +23,7 @@ public class PostController {
     }
 
     @PatchMapping("/{postId}")
-    public Response<Long> updatePost(@PathVariable(name = "postId") Long postId, UpdatePostRequestDto dto) {
+    public Response<Long> updatePost(@PathVariable(name = "postId") Long postId, @RequestBody UpdatePostRequestDto dto) {
         Post post = postService.updatePost(postId, dto);
         return Response.ok(post.getId());
     }
