@@ -1,6 +1,7 @@
 package org.community.post.repository;
 
 import lombok.RequiredArgsConstructor;
+import org.community.post.Post;
 import org.community.post.application.interfaces.CommentRepository;
 import org.community.post.domain.comment.Comment;
 import org.community.post.repository.entity.comment.CommentEntity;
@@ -17,6 +18,7 @@ public class CommentRepositoryImpl implements CommentRepository {
 
     @Override
     public Comment save(Comment comment) {
+        Post targetPost = comment.getPost();
         CommentEntity commentEntity = new CommentEntity(comment);
 //        if(comment.getId() == null) {
 //            jpaCommentRepository.updateCommentEntity(commentEntity);

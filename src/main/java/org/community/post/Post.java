@@ -15,7 +15,7 @@ import org.community.user.domain.User;
 public class Post {
 
     private final User author;
-    private final long id;
+    private final Long id;
     private final Content content;
     private final PositiveIntegerCounter likeCount;
     private PostPublicationState state;
