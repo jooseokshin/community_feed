@@ -1,4 +1,5 @@
 package org.community.auth.application.dto;
 
-public class LoginRequestDto {
+public record LoginRequestDto(String email, String password) {
+
 }

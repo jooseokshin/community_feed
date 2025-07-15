@@ -32,6 +32,10 @@ public class User {
         this.followingCount = new PositiveIntegerCounter();
     }
 
+    public User(String name, String profileImageUrl) {
+        this(null, new UserInfo(name, profileImageUrl));
+    }
+
     public void follow(User targetUser){
         if(this.equals(targetUser))
             throw new IllegalArgumentException();

@@ -4,7 +4,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.5"
 }
 
-group = "org.community"
+group = "org.fastcampus"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -17,6 +17,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 
     // mysql
     runtimeOnly("com.mysql:mysql-connector-j")
@@ -31,12 +32,19 @@ dependencies {
     annotationProcessor ("jakarta.annotation:jakarta.annotation-api")
     annotationProcessor ("jakarta.persistence:jakarta.persistence-api")
 
+    // jwt
+    implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+    implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
+    runtimeOnly("io.jsonwebtoken:jjwt-gson:0.12.6")
+
+
     // test
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
     testImplementation("io.rest-assured:rest-assured:5.5.0")
-//    runtimeOnly("com.h2database:v2")
+    runtimeOnly("com.h2database:h2")
 }
 
 tasks.test {
